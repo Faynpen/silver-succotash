@@ -1,0 +1,30 @@
+# Agent Framework Configuration
+# =============================
+# Replace YOUR_API_KEY with your DeepSeek API key from:
+#   https://platform.deepseek.com/api_keys
+
+llm:
+  provider: deepseek
+  api_key: "YOUR_DEEPSEEK_API_KEY"
+  base_url: "https://api.deepseek.com/v1"
+  model: "deepseek-chat"
+  max_retries: 3
+  timeout: 60.0
+  fallback_models: []
+
+agent:
+  max_steps: 10
+  temperature: 0.7
+
+orchestrator:
+  max_revise_rounds: 3
+  storage_dir: ".agent_memory"
+
+# Agent role prompts can be overridden here
+roles:
+  planner:
+    temperature: 0.3
+  executor:
+    temperature: 0.5
+  reviewer:
+    temperature: 0.2
