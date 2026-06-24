@@ -37,6 +37,12 @@ from tools.fall_detection import (
     get_patient_location,
 )
 from tools.basic import calculator, web_search, control_environment
+from tools.recovery import (
+    get_rehab_plan,
+    check_exercise_safety,
+    log_training_session,
+    get_progress_summary,
+)
 
 
 def register_all_tools(tools: ToolRegistry):
@@ -56,6 +62,12 @@ def register_all_tools(tools: ToolRegistry):
     tools.register(call_ambulance)
     tools.register(notify_emergency_contacts)
     tools.register(get_patient_location)
+
+    # Rehabilitation
+    tools.register(get_rehab_plan)
+    tools.register(check_exercise_safety)
+    tools.register(log_training_session)
+    tools.register(get_progress_summary)
 
     # Basic utilities
     tools.register(calculator)
